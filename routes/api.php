@@ -16,3 +16,13 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+
+Route::post('pet/create', 'PetController@store');
+
+Route::get('pet/{id}', 'PetController@getPet');
+Route::get('pet/all', 'PetController@index');
+
+Route::put('pet/{id}', 'PetController@updatePet');
+
+Route::post('owner/create', 'OwnerController@store');
